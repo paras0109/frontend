@@ -1,10 +1,4 @@
-replicaCount: 1  # start with 1 pod
-
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 3
-  targetCPUUtilizationPercentage: 50
+replicaCount: 1
 
 image:
   repository: us-central1-docker.pkg.dev/free-trail-458302/new-test/frontend
@@ -19,7 +13,7 @@ labels:
   my-frontend: app-frontend
 
 nodeSelector:
-  kubernetes.io/hostname: frontend
+  kubernetes.io/hostname: gke-test-cluster-frontend-9d9e3fa8-p9zb
 
 resources:
   requests:
@@ -28,5 +22,11 @@ resources:
   limits:
     cpu: 500m
     memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
 
 namespace: frontend
