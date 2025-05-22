@@ -1,0 +1,5 @@
+apiVersion: v2
+name: my-app
+description: A Helm chart for deploying frontend app to GKE with Argo CD
+version: 0.1.0
+appVersion: "1.0"

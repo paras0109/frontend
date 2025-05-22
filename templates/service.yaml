@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "my-app.fullname" . }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    {{- range $k, $v := .Values.labels }}
+    {{ $k }}: {{ $v }}
+    {{- end }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80

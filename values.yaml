@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  repository: us-central1-docker.pkg.dev/free-trail-458302/new-test/frontend
+  tag: "1"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+labels:
+  my-frontend: app-frontend
+
+nodeSelector:
+  kubernetes.io/hostname: frontend
+
+resources: {}
+
+namespace: frontend
