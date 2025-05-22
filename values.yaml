@@ -13,7 +13,7 @@ labels:
   my-frontend: app-frontend
 
 nodeSelector:
-  kubernetes.io/hostname: frontend
+  kubernetes.io/hostname: gke-test-cluster-frontend-9d9e3fa8-p9zb
 
 resources: {}
 
